@@ -1,6 +1,7 @@
 interface CategoryProps{
     params:{
-        categories: string[]
+        categories: string[],
+        seachParams: string
     }
 }
 
