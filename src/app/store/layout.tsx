@@ -1,27 +1,20 @@
-import { Description } from "../components/home/Description";
-import { Hero } from "../components/home/Hero";
-import { Footer } from "../components/shared/Footer";
-import { Header } from "../components/shared/Header";
-import '/src/app/sass/globals.sass'
-import { Roboto } from "next/font/google";
+import { getCollections } from "app/services/shopify/collections"
+import Link from "next/link"
 
-const roboto = Roboto({
-    weight: ["100","300","500","700"],
-    subsets: ["latin"],
-})
 
-export default function RootLayout({children}: 
+export default async function Layout({children}:{children: React.ReactNode}){
+    const collections = await getCollections()
+return(
+    <main>
+        <nav>Navegación de las Categorias</nav>
+        {
+            collections.map((collection =>(
+                <Link key={collection.id} href={'/store/'+collection.handle}>
+                    {collection.title}
+                </Link>
+            )))
+        }
+    </main>
 
-    {children: React.ReactNode
-    }){
-
-    return(
-<html lang="en">
-    <body className={roboto.className}>
-        <Header />
-        {children}
-        <Footer/>
-    </body>
-</html>
-    )
+)
 }
