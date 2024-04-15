@@ -1,2 +1,0 @@
-export {Description} from './description'
-

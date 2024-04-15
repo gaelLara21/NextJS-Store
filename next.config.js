@@ -1,21 +1,21 @@
 /** @type {import('next').NextConfig} */
 
 const path = require('path')
+
 const nextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-    prependData: '@import "main.sass"',
+    includePaths: [path.join(__dirname, 'src/sass')],
+    prependData: `@import "main.sass"`,
   },
-  images:{
+  images: {
     remotePatterns: [
       {
-      hostname: 'cdn.shopify.com',
-      
-      protocol: 'https',
-    }
-  ]
+        hostname: 'cdn.shopify.com',
+        protocol: 'https',
+      }
+    ]
   }
-};
+}
 
 module.exports = nextConfig;
   

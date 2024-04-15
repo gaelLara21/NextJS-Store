@@ -1,16 +1,16 @@
-import { ProductCard } from "app/app/components/Store/ProductCard/ProductCard"
+import { ProductCard } from '../ProductCard'
 import styles from './ProductsWrapper.module.sass'
 
 interface ProductsWrapperProps {
-    products: ProductType[]
+  products: ProductType[]
 }
 
 export const ProductsWrapper = ({ products }: ProductsWrapperProps) => {
   return (
     <div className={styles.ProductsWrapper}>
-      {products.map((product) => (
+      {products && products.map((product) => (
         <ProductCard key={product.id} product={product}/>
       ))}
     </div>
-  )
+  );
 }

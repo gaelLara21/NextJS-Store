@@ -1,25 +1,25 @@
 import { Roboto } from "next/font/google";
-import { Header } from "./components/shared/Header";
-import {Footer} from "./components/shared/Footer"
-import './sass/globals.sass'
+import { Header } from "app/components/shared/Header";
+import { Footer } from "app/components/shared/Footer/footer";
+import 'app/sass/globals.sass'
 
-const roboto = Roboto({ 
+const roboto = Roboto({
   weight: ["100", "300", "500", "700"],
   subsets: ["latin"],
-});
+})
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-      <Header/>
+      <Header />
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
-  );
+  )
 }

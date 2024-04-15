@@ -10,7 +10,7 @@
     background: transparent
     border: none
     cursor: pointer
-    &__border
+    &--border
       img
         border: 3px solid $main-contrast
   &__imageContainer
@@ -18,10 +18,9 @@
     width: 500px
     height: 300px
     & > img
-        object-fit: cover
-        border-radius: 1rem
-        box-shadow: 0 0 4rem rgba(255, 255, 255, 0.2)
-
+      object-fit: cover
+      border-radius: 1rem
+      box-shadow: 0 0 4rem rgba(255, 255, 255, 0.2)
   &__text
     & > h2
       font-size: 2rem
