@@ -12,4 +12,5 @@ mutation customerAccessTokenCreate ($email: String!, $password: String!) {
     }
   }
 }
+
 `
