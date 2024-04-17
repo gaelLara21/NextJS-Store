@@ -5,15 +5,12 @@ import { handleLogin } from "app/actions";
 
 export const LoginForm = () =>{
 
-    const handleSubmit = async (event: {
-        target: any;
-        preventDefault: () => void;
-      
-      }) => {
-        const formData = new FormData(event.target);
-        event.preventDefault();
-        await handleLogin(formData);
-      }
+  const handleSubmit = async (event) => {
+    const formData = new FormData(event.target);
+    event.preventDefault();
+    await handleLogin(formData);
+  }
+
 
       return (
         <div className={styles.NewAccountForm}  >
