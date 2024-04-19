@@ -10,16 +10,16 @@ export const createAccessToken = async (email: string, password: string) => {
     "password": password
   })
 
-  const { accessToken, expiresAt } = customerAccessTokenCreate?.customerAccessToken
+  const data = customerAccessTokenCreate?.customerAccessToken
+  console.log(data)
+  // if(accessToken){
+  //   cookiesStore.set("accessToken", accessToken, {
+  //     path: "/",
+  //     expires: new Date(expiresAt),
+  //     httpOnly: true,
+  //     sameSite: "strict",
+  //   })
 
-  if(accessToken){
-    cookiesStore.set("accessToken", accessToken, {
-      path: "/",
-      expires: new Date(expiresAt),
-      httpOnly: true,
-      sameSite: "strict",
-    })
-
-    return accessToken
-  }
+  //   return accessToken
+ //}
 }
