@@ -1,9 +1,9 @@
-interface ErrorPageProps{
+interface ErrorPageProps {
     error: Error;
     reset: () => void;
-}
-
-type ProductType = {
+  }
+  
+  type ProductType = {
     id: string;
     title: string;
     description: string;
@@ -15,3 +15,11 @@ type ProductType = {
     gql_id: string;
   };
   
+  type CartItem = {
+    title: string;
+    price: number;
+    quantity: number;
+    id: string;
+    image: string;
+    merchandiseId: string;
+  }
